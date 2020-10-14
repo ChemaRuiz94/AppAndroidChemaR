@@ -3,29 +3,25 @@ package com.example.androidappchemar
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_acerca_de.*
+import kotlinx.android.synthetic.main.actvity_mandar_correo.*
 
-class AcercaDeActivity : AppCompatActivity() {
+class MandarCorreoActivity :AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState:Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_acerca_de)
+        setContentView(R.layout.actvity_mandar_correo)
 
-        acercaBtnTwitter.setOnClickListener { abrirURL("https://twitter.com/ChemaRuizL") }
-        acercaBtnGitHub.setOnClickListener { abrirURL("https://github.com/ChemaRuiz94") }
-        acercaBtnCorreo.setOnClickListener { mandarCorreo("chemaruiz94@gmail.com.com", "Prueba", "Texto de prueba") }
+        button.setOnClickListener() {
+            mandarCorreo(
+                editTextTextPersonName.toString(),
+                "Asunto",
+                editTextTextEmailAddress.toString()
+            )
+        }
 
-    }
-
-    //direccion url
-    private fun abrirURL(url:String){
-        val intent = Intent (
-            Intent.ACTION_VIEW,
-            Uri.parse(url)
-        )
-        startActivity(intent)
     }
 
     // Mandar un email
@@ -42,6 +38,5 @@ class AcercaDeActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
         }
-
     }
 }

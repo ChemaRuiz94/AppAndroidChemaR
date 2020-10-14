@@ -32,6 +32,14 @@ class MainActivity : AppCompatActivity() {
                 menuOtraOpcion()
                 true
             }
+            R.id.menu_amigo->{
+                menuOtraOpcion()
+                true
+            }
+            R.id.menu_correo->{
+                menuCorreo()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -47,6 +55,11 @@ class MainActivity : AppCompatActivity() {
     // Muestra la actividad Acerca De
     private fun menuAcercaDe() {
         val intent = Intent(this, AcercaDeActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun menuCorreo(){
+        val intent= Intent (this,MandarCorreoActivity::class.java)
         startActivity(intent)
     }
 }
