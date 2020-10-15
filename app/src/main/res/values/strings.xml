@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidAppChemaR</string>
+    <string name="acerca_de">Acerca de...</string>
+    <string name="nota">Añadir nota</string>
+    <string name="correo">Mandar correo</string>
+    <string name="amigo">Añadir amigo</string>
+    <string name="cita">Añadir cita</string>
 </resources>
