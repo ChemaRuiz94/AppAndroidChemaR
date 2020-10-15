@@ -24,20 +24,24 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
-            R.id.menu_acerca_de -> {
-                menuAcercaDe()
-                true
-            }
             R.id.menu_nota -> {
-                menuOtraOpcion()
-                true
-            }
-            R.id.menu_amigo->{
                 menuOtraOpcion()
                 true
             }
             R.id.menu_correo->{
                 menuCorreo()
+                true
+            }
+            R.id.menu_amigo->{
+                menuAmigo()
+                true
+            }
+            R.id.menu_cita -> {
+                menuOtraOpcion()
+                true
+            }
+            R.id.menu_acerca_de -> {
+                menuAcercaDe()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -60,6 +64,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun menuCorreo(){
         val intent= Intent (this,MandarCorreoActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun menuAmigo(){
+        val intent = Intent(this,AniadirAmigoActivity::class.java)
         startActivity(intent)
     }
 }
